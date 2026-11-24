@@ -1,15 +1,19 @@
-// Haiku 5-7-5 about debugging; writes the haiku to /output/entry.txt
+// Seventeen Syllables of Debugging — a haiku about debugging.
+// Writes exactly three lines (5-7-5 syllables) to /output/entry.txt.
+//
+//   Cursor blinks at three                  (5: cur-sor / blinks / at / three)
+//   the stack trace scrolls past midnight   (7: the / stack / trace / scrolls / past / mid-night)
+//   one semicolon                           (5: one / sem-i-co-lon)
+//
+// The last line turns the poem: a whole night lost to a single missing
+// semicolon. Deterministic output — the same three lines on every run.
 import { mkdirSync, writeFileSync } from "node:fs";
 
-// Seventeen Syllables of Debugging — one haiku about debugging, 5-7-5.
-// Line 1 (5): The(1) break-point(2) holds(1) still(1)
-// Line 2 (7): a(1) log(1) line(1) scrolls(1) past(1) mid-night(2)
-// Line 3 (5): and(1) the(1) bug(1) was(1) me(1)
-const haiku = [
-  "The breakpoint holds still",
-  "a log line scrolls past midnight",
-  "and the bug was me",
-].join("\n");
+const haiku: string[] = [
+  "Cursor blinks at three",
+  "the stack trace scrolls past midnight",
+  "one semicolon",
+];
 
 mkdirSync("/output", { recursive: true });
-writeFileSync("/output/entry.txt", haiku + "\n", "utf8");
+writeFileSync("/output/entry.txt", haiku.join("\n"), "utf8");
