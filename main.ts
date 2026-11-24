@@ -1,3 +1,4 @@
+// Haiku 5-7-5 about debugging; writes the haiku to /output/entry.txt
 import { mkdirSync, writeFileSync } from "node:fs";
 
 // Seventeen Syllables of Debugging — one haiku about debugging, 5-7-5.
